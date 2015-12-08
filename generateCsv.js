@@ -8,7 +8,7 @@ fs.readFile(file, 'utf8', function (err,data) {
   }
   // console.log(data);
   // var regex = /[\-\>]+/;
-  var regex = /[\-\>\_\_\(]+/;
+  var regex = /(->__\()/;
   var result = regex.exec(data);
   console.log(result);
   //  TAKE result and continue parsing for strings to translate. Move to csv
