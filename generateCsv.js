@@ -1,12 +1,14 @@
 fs = require('fs');
 
-// var file = "/Users/jtanacredi/Dev/testing/translation-parser/index.phtml"
-var file = "/Users/justintanacredi/Dev/node/translation-csv-generator/index.phtml",
+var file = __dirname + "/index.phtml",
     regex = /(->__\()(.*)(\);)/g,
     matches = [],
     match;
 
-
+    // current file location
+    // console.log("This file is " + __filename);
+    // Current directory path
+    // console.log("It's located in " + __dirname);
 
 fs.readFile(file, 'utf8', function (err,data) {
   if (err) {
@@ -17,13 +19,8 @@ fs.readFile(file, 'utf8', function (err,data) {
   while ((match = regex.exec(data)) != null) {
       matches.push(match[1]);
       match = regex.exec(data);
-      console.log(matches);
+      console.log(data);
   }
-  // console.log(matches);
-  //
-  // var result = regex.exec(data);
-  // console.log(result);
-
 
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec
   // console.log(result[0]);
