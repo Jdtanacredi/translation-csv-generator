@@ -15,8 +15,8 @@ fs.readFile(file, 'utf8', function (err,data) {
   // regex for everything between ->__( and );
 
   while ((match = regex.exec(data)) != null) {
-      matches.push(match[1]);
-      match = regex.exec(data);
+      matches.push(match[2]);
+      console.log(match);
       console.log(matches);
   }
   // console.log(matches);
