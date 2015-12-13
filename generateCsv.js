@@ -30,6 +30,16 @@ fs.readFile(file, 'utf8', function (err,data) {
       console.log(match);
       console.log(matches);
   }
+  fs.writeFile('./formList.csv', matches, 'utf8', function (err) {
+    if (err) {
+      console.log('Some error occured - file either not saved or corrupted file saved.');
+    } else{
+      console.log('It\'s saved!');
+    }
+  });
+
+
+
   // console.log(matches);
   //
   // var result = regex.exec(data);
